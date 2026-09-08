@@ -3,156 +3,579 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Future Healthcare Information Architecture</title>
+
+  <title>The Missing Healthcare Opportunity</title>
+
+  <style>
+    :root {
+      --blue: #155b7a;
+      --blue-dark: #0d4159;
+      --gold: #c88a24;
+      --text: #202020;
+      --muted: #5f676d;
+      --border: #d8dee2;
+      --background: #f4f6f7;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1050px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.06);
+    }
+
+    header {
+      padding: 26px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-name {
+      margin: 0;
+      color: var(--blue-dark);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .site-subtitle {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      padding: 50px 48px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 52px;
+      align-items: center;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cover {
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+      display: block;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: var(--blue-dark);
+      font-size: 42px;
+      line-height: 1.12;
+    }
+
+    .book-subtitle {
+      margin: 0 0 24px;
+      color: var(--blue);
+      font-size: 21px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 17px;
+      margin: 0 0 18px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid var(--blue);
+    }
+
+    .button.primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+    }
+
+    .button.secondary {
+      color: var(--blue);
+      background: white;
+    }
+
+    .button.secondary:hover {
+      background: #f3f8fa;
+    }
+
+    section {
+      padding: 48px 0 8px;
+    }
+
+    h2 {
+      color: var(--blue-dark);
+      font-size: 28px;
+      margin: 0 0 14px;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .principle {
+      margin: 26px 0 4px;
+      padding: 22px 28px;
+      background: #f3f8fa;
+      border-left: 5px solid var(--blue);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .series {
+      margin-top: 28px;
+    }
+
+    .paper {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .paper:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .paper-number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .paper h3 {
+      margin: 3px 0 8px;
+      color: var(--blue-dark);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .paper p {
+      margin: 0 0 10px;
+      max-width: 880px;
+    }
+
+    .paper a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .paper a:hover {
+      text-decoration: underline;
+    }
+
+    .proposal {
+      margin-top: 42px;
+      padding: 28px 32px;
+      background: #faf7f0;
+      border: 1px solid #eadfc9;
+      border-radius: 6px;
+    }
+
+    .proposal h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 30px 48px;
+      background: var(--blue-dark);
+      color: white;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    .footer-name {
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    @media (max-width: 760px) {
+      header,
+      main,
+      footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .cover {
+        max-width: 250px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .book-subtitle {
+        font-size: 19px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif;
-             max-width: 900px;
-             margin: 60px auto;
-             padding: 0 24px;
-             line-height: 1.6;">
+<body>
 
-<h1>Future Healthcare Information Architecture</h1>
+<div class="page">
 
-<p>
-Healthcare is generating more information than ever before, 
-yet physicians often lack the time and tools to assemble the 
-small portion of a patient's history that matters for today's clinical decision. 
-This series explores an information architecture intended to address that challenge 
-while preserving the strengths of today's healthcare information systems.
-</p>
-  
-<p>
-This series explores how a national healthcare information architecture
-could complement existing healthcare information systems by creating a
-trustworthy longitudinal patient history that enables better clinical
-decisions, reduces administrative cost, and provides a stronger
-foundation for AI-assisted healthcare.
-</p>
+  <header>
+    <p class="site-name">Future Healthcare Information Architecture</p>
+    <p class="site-subtitle">
+      Exploring how better information can support better healthcare decisions
+    </p>
+  </header>
 
-<h2>Document Series</h2>
+  <main>
 
-<h3>FHIA-00 &mdash; Vision</h3>
+    <section class="hero">
 
-<p>
-<b>AI Is Delivering Micro Advances in Healthcare While Missing the Macro Opportunity</b><br>
-Introduces the vision for a national longitudinal patient history,
-describes the expected benefits for patients, providers, and payers,
-and proposes a focused 60-day multidisciplinary feasibility study.
-</p>
+      <div>
+        <img
+          src="FrontCover.png"
+          alt="Cover of The Missing Healthcare Opportunity"
+          class="cover">
+      </div>
 
-<p>
-<a href="FHIA-00-Vision.pdf"><b>Read FHIA-00 &mdash; Vision (PDF)</b></a>
-</p>
+      <div>
+        <div class="eyebrow">A Healthcare Information Architecture Proposal</div>
 
-<hr>
+        <h1>The Missing Healthcare Opportunity</h1>
 
-<h3>FHIA-01 &mdash; Information Architecture</h3>
+        <p class="book-subtitle">
+          Healthcare Has More Information Than Ever.<br>
+          Why Does It Still Cost So Much?
+        </p>
 
-<p>
-<b>AI Alone Won't Transform Healthcare — It Requires an Information Architecture</b><br>
-Explains why AI requires more than healthcare data, introducing the
-architectural layers needed to transform fragmented information into a
-trustworthy, evidence-linked longitudinal patient history.
-</p>
+        <p>
+          Healthcare does not suffer from a lack of information. The challenge
+          is bringing together the right information when a healthcare decision
+          must be made.
+        </p>
 
-<p>
-<a href="FHIA-01-Information-Architecture.pdf"><b>Read FHIA-01 &mdash; Information Architecture (PDF)</b></a>
-</p>
+        <p>
+          This book proposes a national healthcare information architecture
+          built around a trustworthy longitudinal patient history. It examines
+          how better information could improve decisions for patients,
+          providers, and payers while reducing administrative effort,
+          duplication, delay, and unnecessary cost.
+        </p>
 
-<hr>
+        <p>
+          Artificial intelligence could help transform fragmented healthcare
+          data into longitudinal knowledge, retrieve the information relevant
+          to a particular purpose, and provide insight that supports rather
+          than replaces human judgment.
+        </p>
 
-<h3>FHIA-02 &mdash; Healthcare Information Systems</h3>
+        <div class="buttons">
+          <a class="button primary"
+             href="missing_healthcare_opportunity.pdf">
+            Read the Complete Book (PDF)
+          </a>
 
-<p>
-<b>Healthcare Information Systems and the Missing Architectural Layer</b><br>
-Examines the role of existing healthcare information systems, TEFCA,
-change data capture, and the shared responsibilities required to
-maintain a continuously updated longitudinal patient history while
-allowing healthcare information systems to focus on operational
-workflows.
-</p>
+          <a class="button secondary"
+             href="#papers">
+            Explore the FHIA Papers
+          </a>
+        </div>
+      </div>
 
-<p>
-<a href="FHIA-02-Healthcare-Information-Systems.pdf"><b>Read FHIA-02 &mdash; Healthcare Information Systems (PDF)</b></a>
-</p>
-
-<hr>
-
-<h3>FHIA-03 &mdash; Building a Trustworthy Longitudinal Patient History</h3>
-
-<p>
-<b>From Healthcare Data to Clinical Knowledge</b><br>
-Describes the information needed to create a longitudinal patient history
-and how information from healthcare and payer systems can be transformed
-into trustworthy clinical knowledge. Examines structured data, clinical
-knowledge extraction, duplicate and conflicting information, provenance,
-and temporal context while preserving the original supporting evidence.
-</p>
-
-<p>
-<a href="FHIA-03-Longitudinal-Patient-History.pdf"><b>Read FHIA-03 &mdash; Building a Trustworthy Longitudinal Patient History (PDF)</b></a>
-</p>
-
-<hr>
-
-<p>
-<b>One History, Many Uses</b><br>
-Explores how a trustworthy longitudinal patient history can support many
-different healthcare needs while protecting patient privacy. Examines
-secure, purpose-based access to relevant information and the use of AI
-to support patients, providers, payers, researchers, industry, and
-government. Illustrates opportunities to improve healthcare decisions
-and outcomes while reducing administrative effort and unnecessary costs.
-</p>
-
-<p>
-<a href="FHIA-04-One-History-Many-Uses.pdf"><b>Read FHIA-04 &mdash; One History, Many Uses: Reducing Costs and Improving Healthcare Effectiveness (PDF)</b></a>
-</p>
-
-<hr>
-
-<p>
-<b>AI in the Healthcare Information Architecture</b><br>
-Examines how AI can help transform healthcare data into information,
-longitudinal knowledge, and purpose-specific insight. Explores the use
-of AI to extract clinical information, reconcile information across
-sources and time, and analyze patient knowledge together with relevant
-external knowledge. Describes how standardized retrieval services,
-authentication, privileges, rules, and validation can provide better
-information for human healthcare decisions rather than replacing
-human judgment.
-</p>
-
-<p>
-<a href="FHIA-05-AI-in-the-Healthcare-Information-Architecture.pdf"><b>Read FHIA-05 &mdash; AI in the Healthcare Information Architecture (PDF)</b></a>
-</p>
-
-<hr>
-
-<p>
-<b>Bringing Healthcare Commerce into the Light</b><br>
-Examines how a trustworthy longitudinal patient history could improve
-the information available to patients, providers, payers, and government.
-Explores how better information about availability, experience, cost,
-treatment outcomes, prior authorization, payment, and fraud could make
-healthcare decisions more informed and healthcare commerce more transparent.
-Concludes the series by bringing together the potential value of longitudinal
-information across the healthcare system.
-</p>
-
-<p>
-<a href="FHIA-06-Bringing-Healthcare-Commerce-into-the-Light.pdf"><b>Read FHIA-06 &mdash; Bringing Healthcare Commerce into the Light (PDF)</b></a>
-</p>
+    </section>
 
 
-<p>
-Douglas H. Ebel<br>
-Email:
-<a href="mailto:douglas.h.ebel@gmail.com">
-douglas.h.ebel@gmail.com
-</a>
-</p>
+    <section>
+      <h2>The Opportunity</h2>
+
+      <p class="section-intro">
+        Patient information is distributed across primary-care practices,
+        specialists, hospitals, laboratories, imaging centers, pharmacies,
+        payers, and other healthcare organizations. Interoperability can help
+        make those records accessible, but exchanging information is not the
+        same as maintaining a continuously reconciled longitudinal patient
+        history.
+      </p>
+
+      <p class="section-intro">
+        The proposed architecture would complement existing healthcare
+        information systems by creating a shared national layer capable of
+        extracting clinical meaning, reconciling information across sources
+        and time, preserving evidence and provenance, identifying unresolved
+        questions and outcomes, and making relevant knowledge available when
+        healthcare decisions are made.
+      </p>
+
+      <div class="principle">
+        One Trusted History. Many Uses. Better Outcomes for All.
+      </div>
+    </section>
+
+
+    <section id="papers">
+      <h2>Future Healthcare Information Architecture Papers</h2>
+
+      <p class="section-intro">
+        The following seven papers developed the concepts that became
+        <i>The Missing Healthcare Opportunity</i>. They remain available
+        individually for readers interested in specific elements of the
+        proposed architecture.
+      </p>
+
+      <div class="series">
+
+        <div class="paper">
+          <div class="paper-number">FHIA-00 &mdash; Vision</div>
+
+          <h3>
+            AI Is Delivering Micro Advances in Healthcare While Missing the
+            Macro Opportunity
+          </h3>
+
+          <p>
+            Introduces the vision for a national longitudinal patient history,
+            describes the expected benefits for patients, providers, and payers,
+            and proposes a focused 60-day multidisciplinary feasibility study.
+          </p>
+
+          <a href="FHIA-00-Vision.pdf">
+            Read FHIA-00 &mdash; Vision (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-01 &mdash; Information Architecture
+          </div>
+
+          <h3>
+            AI Alone Won't Transform Healthcare &mdash; It Requires an
+            Information Architecture
+          </h3>
+
+          <p>
+            Explains why AI requires more than healthcare data, introducing
+            the architectural layers needed to transform fragmented information
+            into a trustworthy, evidence-linked longitudinal patient history.
+          </p>
+
+          <a href="FHIA-01-Information-Architecture.pdf">
+            Read FHIA-01 &mdash; Information Architecture (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-02 &mdash; Healthcare Information Systems
+          </div>
+
+          <h3>
+            Healthcare Information Systems and the Missing Architectural Layer
+          </h3>
+
+          <p>
+            Examines the role of existing healthcare information systems,
+            TEFCA, change data capture, and the shared responsibilities
+            required to maintain a continuously updated longitudinal patient
+            history while allowing healthcare information systems to focus on
+            operational workflows.
+          </p>
+
+          <a href="FHIA-02-Healthcare-Information-Systems.pdf">
+            Read FHIA-02 &mdash; Healthcare Information Systems (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-03 &mdash; Longitudinal Patient History
+          </div>
+
+          <h3>
+            Building a Trustworthy Longitudinal Patient History:
+            From Healthcare Data to Clinical Knowledge
+          </h3>
+
+          <p>
+            Describes the information needed to create a longitudinal patient
+            history and how information from healthcare and payer systems can
+            be transformed into trustworthy clinical knowledge. Examines
+            structured data, clinical knowledge extraction, duplicate and
+            conflicting information, provenance, and temporal context while
+            preserving the original supporting evidence.
+          </p>
+
+          <a href="FHIA-03-Longitudinal-Patient-History.pdf">
+            Read FHIA-03 &mdash; Longitudinal Patient History (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-04 &mdash; One History, Many Uses
+          </div>
+
+          <h3>One History, Many Uses</h3>
+
+          <p>
+            Explores how a trustworthy longitudinal patient history can support
+            many different healthcare needs while protecting patient privacy.
+            Examines secure, purpose-based access to relevant information and
+            the use of AI to support patients, providers, payers, researchers,
+            industry, and government.
+          </p>
+
+          <a href="FHIA-04-One-History-Many-Uses.pdf">
+            Read FHIA-04 &mdash; One History, Many Uses (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-05 &mdash; AI in the Healthcare Information Architecture
+          </div>
+
+          <h3>AI in the Healthcare Information Architecture</h3>
+
+          <p>
+            Examines how AI can help transform healthcare data into information,
+            longitudinal knowledge, and purpose-specific insight. Explores AI
+            for clinical knowledge extraction, reconciliation across sources
+            and time, content retrieval, and analysis using longitudinal and
+            relevant external knowledge.
+          </p>
+
+          <a href="FHIA-05-AI-in-the-Healthcare-Information-Architecture.pdf">
+            Read FHIA-05 &mdash; AI in the Healthcare Information Architecture (PDF)
+          </a>
+        </div>
+
+
+        <div class="paper">
+          <div class="paper-number">
+            FHIA-06 &mdash; Healthcare Commerce
+          </div>
+
+          <h3>Bringing Healthcare Commerce into the Light</h3>
+
+          <p>
+            Examines how a trustworthy longitudinal patient history could
+            improve the information available to patients, providers, payers,
+            and government. Explores availability, experience, cost, treatment
+            outcomes, prior authorization, payment, fraud, and opportunities
+            for more informed healthcare decisions.
+          </p>
+
+          <a href="FHIA-06-Bringing-Healthcare-Commerce-into-the-Light.pdf">
+            Read FHIA-06 &mdash; Bringing Healthcare Commerce into the Light (PDF)
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="proposal">
+      <h2>From Vision to Action: The Proposal</h2>
+
+      <p>
+        The book does not propose beginning a massive national technology
+        program. It proposes determining whether the opportunity is worth
+        pursuing.
+      </p>
+
+      <p>
+        A focused 60-day assessment by six experts from complementary
+        healthcare, technology, privacy, economic, and policy disciplines
+        could examine three fundamental questions:
+        Is the potential value significant?
+        Is the required architecture technically feasible?
+        And are the major barriers reasonably addressable?
+      </p>
+
+      <p>
+        The objective is evidence before implementation.
+      </p>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <div class="footer-name">Douglas H. Ebel</div>
+    <div>
+      Future Healthcare Information Architecture
+    </div>
+    <div>
+      Email:
+      <a href="mailto:douglas.h.ebel@gmail.com">
+        douglas.h.ebel@gmail.com
+      </a>
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>
