@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,7 +132,7 @@
       color: var(--blue-dark);
       border-color: var(--blue);
     }
-    
+
     .button.primary:hover {
       background: #d5e8ef;
       color: var(--blue-dark);
@@ -145,6 +146,21 @@
 
     .button.secondary:hover {
       background: #f3f8fa;
+    }
+
+    .print-book {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .print-book h3 {
+      margin: 0 0 10px;
+      color: var(--blue-dark);
+      font-size: 18px;
+    }
+
+    .print-book p {
+      margin-bottom: 14px;
     }
 
     section {
@@ -171,6 +187,64 @@
       font-size: 20px;
       font-weight: 700;
       color: var(--blue-dark);
+    }
+
+    .book-complete {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-top: 42px;
+      padding: 30px;
+      background: #f7f9fa;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .book-stack {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .book-complete h2 {
+      margin-top: 0;
+    }
+
+    .book-complete p:last-child {
+      margin-bottom: 0;
+    }
+
+    .continuing {
+      padding-top: 48px;
+    }
+
+    .new-paper {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .new-paper h3 {
+      margin: 3px 0 8px;
+      color: var(--blue-dark);
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .new-paper p {
+      max-width: 880px;
+      margin: 0 0 10px;
+    }
+
+    .new-paper a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .new-paper a:hover {
+      text-decoration: underline;
     }
 
     .series {
@@ -263,6 +337,10 @@
         margin: 0 auto;
       }
 
+      .book-complete {
+        grid-template-columns: 1fr;
+      }
+
       h1 {
         font-size: 34px;
       }
@@ -273,6 +351,7 @@
     }
   </style>
 </head>
+
 
 <body>
 
@@ -285,7 +364,10 @@
     </p>
   </header>
 
+
   <main>
+
+    <!-- BOOK HERO -->
 
     <section class="hero">
 
@@ -297,7 +379,10 @@
       </div>
 
       <div>
-        <div class="eyebrow">A Healthcare Information Architecture Proposal</div>
+
+        <div class="eyebrow">
+          A Healthcare Information Architecture Proposal
+        </div>
 
         <h1>The Missing Healthcare Opportunity</h1>
 
@@ -326,53 +411,108 @@
           to a particular purpose, and provide insight that supports rather
           than replaces human judgment.
         </p>
+
         <p>
           For a concise introduction, read the Overview &amp; Proposal.
           The complete book provides the supporting architecture, examples,
           analysis, and references.
         </p>
-      <div class="buttons">
-        <a class="button primary"
-           href="Healthcare_AI_Overview_and_Proposal.pdf">
-          Read the Overview &amp; Proposal
-        </a>
-      
-        <a class="button secondary"
-           href="missing_healthcare_opportunity.pdf">
-          Read the Complete Book
-        </a>
-              <div class="print-book">
-          <h3>Prefer a Printed Copy?</h3>
-      
-          <p>
+
+        <div class="buttons">
+
+          <a class="button primary"
+             href="Healthcare_AI_Overview_and_Proposal.pdf">
+            Read the Overview &amp; Proposal
+          </a>
+
+          <a class="button secondary"
+             href="missing_healthcare_opportunity.pdf">
+            Read the Complete Book
+          </a>
+
+          <div class="print-book">
+
+            <h3>Prefer a Printed Copy?</h3>
+
+            <p>
               The 124-page paperback is available through print-on-demand
               at printing cost. No author revenue is included in the price.
               The complete PDF remains available free on this site.
-          </p>
-      
-          <a class="button secondary"
-             href="https://www.lulu.com/shop/douglas-ebel/the-missing-healthcare-opportunity/paperback/product-kv4m49k.html"
-             target="_blank"
-             rel="noopener noreferrer">
+            </p>
+
+            <a class="button secondary"
+               href="https://www.lulu.com/shop/douglas-ebel/the-missing-healthcare-opportunity/paperback/product-kv4m49k.html"
+               target="_blank"
+               rel="noopener noreferrer">
               Order a Printed Copy
-          </a>
-        <p> 
-        
-        </p>
-        <p>
-          The source papers for the book were originally posted in LinkedIn and the content was revised for the book.
-        </p>
-                
-          <a class="button secondary"
-             href="#papers">
-            Explore the FHIA Papers
-          </a>
+            </a>
+
+          </div>
+
+          <div class="print-book">
+
+            <p>
+              The source papers for the book were originally posted on
+              LinkedIn and revised for the book. New FHIA papers continue
+              to explore questions raised by the architecture.
+            </p>
+
+            <a class="button secondary"
+               href="#continuing">
+              Explore the Latest FHIA Papers
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
 
 
+    <!-- PHYSICAL BOOK -->
+
+    <div class="book-complete">
+
+      <div>
+        <img
+          src="book_stack.jpeg"
+          alt="Printed copies of The Missing Healthcare Opportunity"
+          class="book-stack">
+      </div>
+
+      <div>
+
+        <h2>From Papers to a Book</h2>
+
+        <p>
+          The original Future Healthcare Information Architecture papers
+          have now been consolidated, expanded, and revised into
+          <i>The Missing Healthcare Opportunity</i>.
+        </p>
+
+        <p>
+          Printed copies are being shared with people in healthcare,
+          government, health information technology, and industry who
+          may be able to evaluate or challenge the proposal.
+        </p>
+
+        <p>
+          The objective is not to sell books. It is to determine whether
+          the proposed national longitudinal healthcare information
+          architecture warrants a focused feasibility assessment.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- THE OPPORTUNITY -->
+
     <section>
+
       <h2>The Opportunity</h2>
 
       <p class="section-intro">
@@ -396,23 +536,93 @@
       <div class="principle">
         One Trusted History. Many Uses. Better Outcomes for All.
       </div>
+
     </section>
 
 
-    <section id="papers">
-      <h2>Future Healthcare Information Architecture Papers</h2>
+    <!-- CONTINUING FHIA WORK -->
+
+    <section class="continuing" id="continuing">
+
+      <h2>Continuing the Investigation</h2>
 
       <p class="section-intro">
-        The following seven papers developed the concepts that became
-        <i>The Missing Healthcare Opportunity</i>. They remain available
-        individually for readers interested in specific elements of the
-        proposed architecture.
+        The book brought together the first seven FHIA papers into a
+        single healthcare information architecture. The investigation
+        continues with shorter papers examining specific questions raised
+        by the architecture.
+      </p>
+
+
+      <div class="new-paper">
+
+        <div class="paper-number">
+          FHIA-08 &mdash; RAG and Longitudinal Knowledge
+        </div>
+
+        <h3>Does RAG Solve Healthcare AI's Information Problem?</h3>
+
+        <p>
+          RAG can make AI better at finding information, but retrieval
+          does not resolve healthcare information that is inconsistent,
+          duplicated, incomplete, or scattered across organizations.
+          This paper examines what should happen to healthcare records
+          before they are retrieved by AI.
+        </p>
+
+        <a href="FHIA-08-Beyond-RAG.pdf">
+          Read FHIA-08 &mdash; Beyond RAG (PDF)
+        </a>
+
+      </div>
+
+
+      <div class="new-paper">
+
+        <div class="paper-number">
+          FHIA-09 &mdash; Treatment and Outcome Information
+        </div>
+
+        <h3>What Happened to Patients Like Me?</h3>
+
+        <p>
+          Patients and physicians often must choose among treatments
+          without being able to see what happened to comparable patients.
+          This paper explores how connecting patient characteristics,
+          conditions, treatments, and outcomes could provide better
+          evidence for healthcare decisions.
+        </p>
+
+        <a href="FHIA-09-Patients-Need-Outcome-Information.pdf">
+          Read FHIA-09 &mdash; Patients Need Outcome Information (PDF)
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PAPERS BEHIND THE BOOK -->
+
+    <section id="papers">
+
+      <h2>The Papers Behind the Book</h2>
+
+      <p class="section-intro">
+        <i>The Missing Healthcare Opportunity</i> grew from seven papers
+        published as the Future Healthcare Information Architecture series.
+        They remain available individually for readers interested in the
+        development of specific elements of the proposed architecture.
       </p>
 
       <div class="series">
 
+
         <div class="paper">
-          <div class="paper-number">FHIA-00 &mdash; Vision</div>
+
+          <div class="paper-number">
+            FHIA-00 &mdash; Vision
+          </div>
 
           <h3>
             AI Is Delivering Micro Advances in Healthcare While Missing the
@@ -428,10 +638,12 @@
           <a href="FHIA-00-Vision.pdf">
             Read FHIA-00 &mdash; Vision (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-01 &mdash; Information Architecture
           </div>
@@ -450,10 +662,12 @@
           <a href="FHIA-01-Information-Architecture.pdf">
             Read FHIA-01 &mdash; Information Architecture (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-02 &mdash; Healthcare Information Systems
           </div>
@@ -473,10 +687,12 @@
           <a href="FHIA-02-Healthcare-Information-Systems.pdf">
             Read FHIA-02 &mdash; Healthcare Information Systems (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-03 &mdash; Longitudinal Patient History
           </div>
@@ -498,10 +714,12 @@
           <a href="FHIA-03-Longitudinal-Patient-History.pdf">
             Read FHIA-03 &mdash; Longitudinal Patient History (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-04 &mdash; One History, Many Uses
           </div>
@@ -519,10 +737,12 @@
           <a href="FHIA-04-One-History-Many-Uses.pdf">
             Read FHIA-04 &mdash; One History, Many Uses (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-05 &mdash; AI in the Healthcare Information Architecture
           </div>
@@ -540,10 +760,12 @@
           <a href="FHIA-05-AI-in-the-Healthcare-Information-Architecture.pdf">
             Read FHIA-05 &mdash; AI in the Healthcare Information Architecture (PDF)
           </a>
+
         </div>
 
 
         <div class="paper">
+
           <div class="paper-number">
             FHIA-06 &mdash; Healthcare Commerce
           </div>
@@ -561,13 +783,19 @@
           <a href="FHIA-06-Bringing-Healthcare-Commerce-into-the-Light.pdf">
             Read FHIA-06 &mdash; Bringing Healthcare Commerce into the Light (PDF)
           </a>
+
         </div>
 
+
       </div>
+
     </section>
 
 
+    <!-- PROPOSAL -->
+
     <div class="proposal">
+
       <h2>From Vision to Action: The Proposal</h2>
 
       <p>
@@ -588,22 +816,29 @@
       <p>
         The objective is evidence before implementation.
       </p>
+
     </div>
 
   </main>
 
 
   <footer>
-    <div class="footer-name">Douglas H. Ebel</div>
+
+    <div class="footer-name">
+      Douglas H. Ebel
+    </div>
+
     <div>
       Future Healthcare Information Architecture
     </div>
+
     <div>
       Email:
       <a href="mailto:douglas.h.ebel@gmail.com">
         douglas.h.ebel@gmail.com
       </a>
     </div>
+
   </footer>
 
 </div>
